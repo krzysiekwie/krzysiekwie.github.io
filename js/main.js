@@ -20,7 +20,6 @@
 			this.paths.end = this.DOM.el.dataset.morphPath;
 			this.DOM.deco = this.DOM.svg.querySelector('.item__deco');
 			this.DOM.image = this.DOM.svg.querySelector('image');
-			this.DOM.title = this.DOM.el.querySelector('.item__meta > .item__title');
 			this.DOM.subtitle = this.DOM.el.querySelector('.item__meta > .item__subtitle');
 			this.CONFIG = {
 				// Defaults:
@@ -71,7 +70,7 @@
 			}
 			this.mouseleaveFn = () => {
 				clearTimeout(this.mouseTimeout);
-				if( this.isActive ) {
+				if (this.isActive) {
 					this.isActive = false;
 					this.animate();
 				}
@@ -88,14 +87,14 @@
 				duration: this.CONFIG.animation[targetStr].duration,
 				delay: this.CONFIG.animation[targetStr].delay,
 				easing: this.CONFIG.animation[targetStr].easing,
-				elasticity: this.CONFIG.animation[targetStr].elasticity,	
+				elasticity: this.CONFIG.animation[targetStr].elasticity,
 				scaleX: this.isActive ? this.CONFIG.animation[targetStr].scaleX : 1,
 				scaleY: this.isActive ? this.CONFIG.animation[targetStr].scaleY : 1,
 				translateX: this.isActive ? this.CONFIG.animation[targetStr].translateX : 0,
 				translateY: this.isActive ? this.CONFIG.animation[targetStr].translateY : 0,
 				rotate: this.isActive ? this.CONFIG.animation[targetStr].rotate : 0
 			};
-			if( targetStr === 'path' ) {
+			if (targetStr === 'path') {
 				animeOpts.d = this.isActive ? this.paths.end : this.paths.start;
 			}
 			anime.remove(target);
@@ -112,23 +111,23 @@
 				targets: this.DOM.title,
 				easing: 'easeOutQuad',
 				translateY: this.isActive ? [
-					{value: '-50%', duration: 200},
-					{value: ['50%', '0%'], duration: 200}
+					{ value: '-50%', duration: 200 },
+					{ value: ['50%', '0%'], duration: 200 }
 				] : [
-					{value: '50%', duration: 200},
-					{value: ['-50%', '0%'], duration: 200}
+					{ value: '50%', duration: 200 },
+					{ value: ['-50%', '0%'], duration: 200 }
 				],
 				opacity: [
-					{value: 0, duration: 200},
-					{value: 1, duration: 200}
+					{ value: 0, duration: 200 },
+					{ value: 1, duration: 200 }
 				]
 			});
 			anime.remove(this.DOM.subtitle);
 			anime({
 				targets: this.DOM.subtitle,
 				easing: 'easeOutQuad',
-				translateY: this.isActive ? {value: ['50%', '0%'], duration: 200, delay: 250} : {value: '0%', duration: 1},
-				opacity: this.isActive ? {value: [0,1], duration: 200, delay: 250} : {value: 0, duration: 1}
+				translateY: this.isActive ? { value: ['50%', '0%'], duration: 200, delay: 250 } : { value: '0%', duration: 1 },
+				opacity: this.isActive ? { value: [0, 1], duration: 200, delay: 250 } : { value: 0, duration: 1 }
 			});
 		}
 	}
