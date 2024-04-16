@@ -3,7 +3,7 @@
     *::before {
         box-sizing: border-box;
     }
-    
+
     body {
         font-family: "Rubik", sans-serif;
         color: #131314;
@@ -12,18 +12,18 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+
     a {
         text-decoration: none;
         color: #a6a9ac;
         outline: none;
     }
-    
+
     a:hover,
     a:focus {
         color: #131314;
     }
-    
+
     .hidden {
         position: absolute;
         overflow: hidden;
@@ -31,7 +31,7 @@
         height: 0;
         pointer-events: none;
     }
-    
+
     .js .loading::before {
         content: "";
         position: fixed;
@@ -42,7 +42,7 @@
         height: 100%;
         background: #efeff2;
     }
-    
+
     .js .loading::after {
         content: "";
         position: fixed;
@@ -57,14 +57,15 @@
         background: #dcdcde;
         animation: loaderAnim 0.8s ease-out infinite alternate forwards;
     }
-    
+
     @keyframes loaderAnim {
         to {
             transform: scale3d(0.5, 0.5, 1);
         }
     }
+
     /* Icons */
-    
+
     .icon {
         display: block;
         width: 1.5em;
@@ -72,11 +73,11 @@
         margin: 0 auto;
         fill: currentColor;
     }
-    
+
     main {
         overflow: hidden;
     }
-    
+
     .github {
         position: absolute;
         top: 0;
@@ -84,30 +85,32 @@
         width: 6em;
         height: 6em;
     }
-    
+
     .github__deco {
         position: absolute;
         z-index: -1;
         fill: #e6e6e6;
     }
-    
+
     .icon--github {
         font-size: 1.15em;
         margin: 1em 0 0 2.5em;
     }
+
     /* Content */
-    
+
     .content {
         padding: 3em 0;
     }
-    
+
     .content--grid {
         display: grid;
         padding: 10vh 8vw;
         grid-template-columns: 50% 50%;
     }
+
     /* Header */
-    
+
     .krzw-header {
         position: relative;
         display: flex;
@@ -116,7 +119,7 @@
         width: 100%;
         padding: 5vw;
     }
-    
+
     .krzw-header__title {
         font-size: 1.625em;
         font-weight: 500;
@@ -126,8 +129,9 @@
         letter-spacing: 0.5em;
         text-transform: uppercase;
     }
+
     /* Top Navigation Style */
-    
+
     .krzw--links {
         position: relative;
         display: flex;
@@ -135,17 +139,18 @@
         text-align: center;
         white-space: nowrap;
     }
-    
+
     .krzw-icon {
         display: inline-block;
         margin: 0.5em;
     }
-    
+
     .krzw-icon:first-child {
         margin-left: 0;
     }
+
     /* items */
-    
+
     .item {
         position: relative;
         width: 500px;
@@ -159,15 +164,15 @@
         grid-column: span 2;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
-    
+
     .item:nth-of-type(even) {
         margin: 0 auto 0 0;
     }
-    
+
     .item:first-of-type {
         grid-column: span 1;
     }
-    
+
     .item__svg {
         position: relative;
         display: block;
@@ -176,13 +181,13 @@
         min-height: 500px;
         margin: 0 auto;
     }
-    
+
     .item__clippath,
     .item__deco,
     .item__img {
         transform-origin: 50% 50%;
     }
-    
+
     .item__meta {
         position: absolute;
         top: 0;
@@ -194,7 +199,7 @@
         width: 100%;
         height: 100%;
     }
-    
+
     .item__number {
         position: absolute;
         justify-content: right;
@@ -206,7 +211,7 @@
         letter-spacing: 0.5em;
         text-transform: uppercase;
     }
-    
+
     .item__project {
         font-size: 5em;
         font-weight: 500;
@@ -214,13 +219,13 @@
         vertical-align: text-bottom;
         letter-spacing: -0.025em;
     }
-    
+
     .item__reference {
         font-size: 1.25em;
         -webkit-writing-mode: vertical-rl;
         writing-mode: vertical-rl;
     }
-    
+
     .item__title {
         font-size: 1.165em;
         font-weight: 600;
@@ -230,17 +235,17 @@
         letter-spacing: 0.125em;
         color: #fff;
     }
-    
+
     .item__subtitle {
         font-size: 1em;
         font-weight: 500;
-        margin: 0.5em 0 0;
+        margin: 1.5em 0 0;
         text-align: center;
         letter-spacing: 0.15em;
         color: #444;
         opacity: 0;
     }
-    
+
     .item__title-2 {
         font-size: 1.165em;
         font-weight: 600;
@@ -250,39 +255,44 @@
         letter-spacing: 0.125em;
         color: #fff;
     }
+
     /* Individual styles */
-    
+
     .item--style-1 .item__deco {
         fill: #acacac;
     }
-    
+
     .item--style-2 .item__deco {
-        fill: #7a7a7a;
+        fill: #8a8a8a;
     }
-    
+
     .item--style-3 .item__deco {
         fill: #909090;
     }
-    
+
     @media screen and (max-width: 60em) {
         .item:first-of-type {
             grid-column: span 2;
         }
+
         .content--grid {
             grid-row-gap: 25vh;
         }
     }
-    
+
     @media screen and (max-width: 40em) {
         .krzw-header__title {
             font-size: 1em;
         }
+
         .content--grid {
             padding: 2vh 8vw;
         }
+
         .item__number {
             font-size: 0.75em;
         }
+
         .item__svg {
             min-height: 360px;
         }
